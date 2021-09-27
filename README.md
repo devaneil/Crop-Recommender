@@ -5,4 +5,7 @@ Crop recommendation using ensemble learning and deploying it as a web applicatio
 ## Instructions
 **1.** Run app.py. <br>
 **2.** Copy and search the address on your browser (localhost:5000/). <br>
-**3.** Enter the values required and hit predict to see the prediction made by the model.
+**3.** Enter the values required and hit predict to see the prediction made by the model. <br>
+
+Head over to the following links for project details : <br>
+https://github.com/devaneil/Crop-recommender/wiki/Project-details

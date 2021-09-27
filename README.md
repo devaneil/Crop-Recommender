@@ -26,6 +26,7 @@ Crop recommendation using ensemble learning and deploying it as a web applicatio
     -  There were some rows where the ratio of Nitrogen was zero. Those rows were considered as missing values and were dropped as the number of rows with missing values were very less.
   - Potassium and Phosphorus had high correlation so the column containing the ratio of Phosphorus was dropped from the features to avoid multicollinearity.
   - Classes of the target column were encoded using LabelEncoder.
+  - Features were scaled using RobustScaler as there are possible outliers in the data. 
   - Train-Test ratio : 80% and 20%.
 
 - **Data modeling**

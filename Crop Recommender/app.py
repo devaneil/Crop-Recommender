@@ -6,6 +6,7 @@ app = Flask(__name__) # Instantiating Flask class.
 
 model = load(open('ensemble.pkl', 'rb')) # Loading the trained model for prediction.
 label = load(open('label.pkl', 'rb')) # Loading the label encoder to inverse transform the predicted class by the model.
+scaler = load(open('scaler.pkl', 'rb')) # Loading the scaler for scaling the inputs.
 
 @app.route('/')
 def main():
@@ -22,7 +23,7 @@ def home():
     rainfall = request.form['Rain']
     # Converting the values entered by the user into NumPy array to feed the model.
     data = np.array([[nitrogen, potassium, temperature, humidity, pH, rainfall]]) 
-    predicted = model.predict(data) # Prediction.
+    predicted = model.predict(scaler.transform(data)) # Prediction.
     predicted_class = label.inverse_transform(predicted)[0] # Inverse transforming the predicted class.
     return render_template('result.html', data = predicted_class)
 
